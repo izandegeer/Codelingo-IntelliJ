@@ -1,0 +1,14 @@
+# IntelliJ & Gradle
+.idea/
+.gradle/
+build/
+out/
+*.iml
+*.ipr
+*.iws
+
+# Mac
+.DS_Store
+
+# Local Env
+local.properties

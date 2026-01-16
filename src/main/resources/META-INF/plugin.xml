@@ -1,0 +1,68 @@
+<idea-plugin>
+    <id>com.izandegeer.codelingo</id>
+    <name>CodeLingo</name>
+    <vendor email="izandegeer.ua@gmail.com" url="https://github.com/izandegeer">izandegeer</vendor>
+
+    <description><![CDATA[
+    <h2>🦆 CodeLingo: Your Java Translator</h2>
+    <p>
+        CodeLingo transforms cryptic Java error messages into <b>plain, human-readable explanations</b> directly in your console.
+        Perfect for students, junior developers, or anyone tired of deciphering <code>NullPointerExceptions</code>.
+    </p>
+
+    <br/>
+    <h3>✨ Features</h3>
+    <ul>
+        <li><b>Runtime Error Analysis:</b> Instantly explains <code>NullPointerException</code>, <code>IndexOutOfBoundsException</code>, <code>ArithmeticException</code>, and more.</li>
+        <li><b>Compilation Help:</b> Detects missing semicolons <code>;</code>, invalid statements, and missing symbols during build.</li>
+        <li><b>Console Integration:</b> No side panels needed! Explanations appear right below the error in your Run console.</li>
+        <li><b>Actionable Solutions:</b> Doesn't just say <i>what</i> happened, but suggests <i>how</i> to fix it (e.g., "Add a null check").</li>
+    </ul>
+
+    <br/>
+    <h3>🚀 How to use</h3>
+    <ol>
+        <li>Install the plugin.</li>
+        <li>Run any Java program that produces an error.</li>
+        <li>Look at the console output for the <b>[CodeLingo]</b> section.</li>
+    </ol>
+    ]]></description>
+
+    <change-notes><![CDATA[
+    <h3>1.0.5</h3>
+    <ul>
+        <li>🧠 <b>Smarter:</b> Added detection for compilation errors (cannot find symbol, missing semicolons, etc).</li>
+        <li>📚 <b>More Rules:</b> Added explanations for ArithmeticException, NumberFormatException and InputMismatchException.</li>
+    </ul>
+    <h3>1.0.4</h3>
+    <ul>
+        <li>🎨 <b>Style:</b> Centered the CodeLingo header in the console for better visibility.</li>
+    </ul>
+    <h3>1.0.3</h3>
+    <ul>
+        <li>🎨 <b>Style:</b> Improved output formatting (cleaner text, new icons).</li>
+    </ul>
+    <h3>1.0.2</h3>
+    <ul>
+        <li>✨ <b>Clean:</b> Removed the side panel to focus purely on console output.</li>
+        <li>🎨 <b>Style:</b> Removed emojis for a more professional look.</li>
+    </ul>
+    <h3>1.0.1</h3>
+    <ul>
+        <li>✨ <b>New:</b> CodeLingo now speaks directly in the console! No need to look at the side panel.</li>
+        <li>🐛 <b>Fix:</b> Improved error detection listener.</li>
+    </ul>
+    ]]></change-notes>
+
+    <!-- Product and plugin compatibility requirements. -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+    </extensions>
+
+    <applicationListeners>
+        <listener class="com.codelingo.listener.CodeLingoExecutionListener"
+                  topic="com.intellij.execution.ExecutionListener"/>
+    </applicationListeners>
+</idea-plugin>
