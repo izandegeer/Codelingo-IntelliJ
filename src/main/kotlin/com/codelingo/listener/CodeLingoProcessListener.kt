@@ -8,25 +8,26 @@ import com.intellij.openapi.util.Key
 
 class CodeLingoProcessListener(private val processHandler: ProcessHandler) : ProcessAdapter() {
 
+    companion object {
+        private const val TAG = "[CodeLingo]"
+        private const val SEPARATOR = "---------------------------------------------------"
+    }
+
     override fun onTextAvailable(event: ProcessEvent, outputType: Key<*>) {
         val text = event.text
-        
-        // Anti-loop protection: Ignore our own messages
-        if (text.contains("[CodeLingo]")) {
-            return
+
+        // Evitar bucle infinito: ignorar nuestros propios mensajes
+        if (text.contains(TAG)) return
+
+        val explanation = TranslationEngine.explain(text) ?: return
+
+        val formattedMessage = buildString {
+            appendLine()
+            appendLine("------------------- $TAG -------------------")
+            appendLine(explanation)
+            appendLine(SEPARATOR)
         }
 
-        val explanation = TranslationEngine.explain(text)
-
-        if (explanation != null) {
-             // ... logic ...
-            val duckyMessage = "\n" +
-                    "------------------- [CodeLingo] -------------------\n" +
-                    explanation + "\n" +
-                    "---------------------------------------------------\n"
-
-            // Notify with the generic Key
-            processHandler.notifyTextAvailable(duckyMessage, outputType)
-        }
+        processHandler.notifyTextAvailable(formattedMessage, outputType)
     }
 }

@@ -5,21 +5,23 @@ plugins {
 }
 
 group = "com.izandegeer.codelingo"
-version = "1.0.0"
+version = "1.2.0"
 
 repositories {
     mavenCentral()
 }
 
-// Configure Gradle IntelliJ Plugin
+dependencies {
+    testImplementation("junit:junit:4.13.2")
+}
+
 intellij {
-    version.set("2023.3.3") // Target IDE version
-    type.set("IC") // IntelliJ Community Edition
-    plugins.set(listOf("com.intellij.java")) // Dependencies
+    version.set("2023.3.3")
+    type.set("IC")
+    plugins.set(listOf("com.intellij.java"))
 }
 
 tasks {
-    // Set the JVM compatibility for the code
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
         kotlinOptions.jvmTarget = "17"
     }
@@ -37,5 +39,9 @@ tasks {
 
     publishPlugin {
         token.set(System.getenv("PUBLISH_TOKEN"))
+    }
+
+    test {
+        useJUnit()
     }
 }
