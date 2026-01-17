@@ -1,4 +1,4 @@
-# 🦆 CodeLingo - IntelliJ Plugin
+# 🕹️ CodeLingo - IntelliJ Plugin
 
 **Your friendly neighborhood Java error translator.**
 CodeLingo intercepts cryptic Java error messages in your console and translates them into plain, human-readable explanations with actionable solutions.
