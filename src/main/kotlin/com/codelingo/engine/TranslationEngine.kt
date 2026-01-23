@@ -716,6 +716,26 @@ object TranslationEngine {
         ))
 
         add(ErrorPattern(
+            regex = Regex("<identifier> expected|se esperaba <identificador>|se esperaba un identificador", RegexOption.IGNORE_CASE),
+            explanation = ErrorExplanation(
+                emoji = "🏷️",
+                title = localized(
+                    es = "Falta un identificador (Error de Compilación)",
+                    en = "Identifier Expected (Compilation Error)"
+                ),
+                meaning = localized(
+                    es = "Java esperaba un nombre (de variable, método o clase) pero encontró otra cosa. Suele pasar al escribir código fuera de un método o al olvidar un nombre.",
+                    en = "Java expected a name (variable, method or class) but found something else. Usually happens when writing code outside a method or forgetting a name."
+                ),
+                solution = localized(
+                    es = "1. ¿Escribiste código suelto fuera de un método?\n2. ¿Olvidaste el nombre de una variable o método?\n3. Revisa si hay un error de sintaxis en la línea anterior.",
+                    en = "1. Did you write loose code outside a method?\n2. Did you forget a variable or method name?\n3. Check for syntax errors in the previous line."
+                ),
+                category = ErrorCategory.COMPILE_ERROR
+            )
+        ))
+
+        add(ErrorPattern(
             regex = Regex("method.*in class.*cannot be applied|método.*en.*clase.*no se puede aplicar", RegexOption.IGNORE_CASE),
             explanation = ErrorExplanation(
                 emoji = "📞",
