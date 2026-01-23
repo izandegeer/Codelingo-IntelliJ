@@ -40,6 +40,11 @@
     ]]></description>
 
     <change-notes><![CDATA[
+    <h3>1.2.1</h3>
+    <ul>
+        <li>🌐 <b>Bilingual Error Detection:</b> All compilation error patterns now detect both English AND Spanish compiler messages. Works regardless of your JDK language!</li>
+        <li>🔍 <b>20 Patterns Updated:</b> "cannot find symbol", "incompatible types", "missing return", and 17 more now work in both languages.</li>
+    </ul>
     <h3>1.2.0</h3>
     <ul>
         <li>🌐 <b>Bilingual Support:</b> Full Spanish and English translations for all error explanations!</li>

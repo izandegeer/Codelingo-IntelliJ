@@ -7,16 +7,14 @@ CodeLingo intercepts cryptic Java error messages in your console and translates 
 
 ## ✨ Features
 
-- **Runtime Error Analysis:** Instantly explains:
-  - `NullPointerException` (The "billion dollar mistake")
-  - `IndexOutOfBoundsException` (Array limits)
-  - `ArithmeticException` (Division by zero)
-  - `NumberFormatException` (String to number fails)
-  - `InputMismatchException` (Scanner errors)
-- **Compilation Help:** Detects:
-  - Missing semicolons `;`
-  - "Cannot find symbol" (Typos or missing variables)
-  - Invalid statements
+- **🌐 Bilingual Support:** Full Spanish and English explanations. Works regardless of your JDK/compiler language!
+- **50+ Error Types Covered:**
+  - **Runtime Errors:** `NullPointerException`, `IndexOutOfBoundsException`, `ArithmeticException`, `NumberFormatException`, `StackOverflowError`, and many more.
+  - **Compilation Errors:** Missing semicolons, "cannot find symbol", incompatible types, missing return statements, static context errors, etc.
+  - **Warnings:** Unchecked casts, raw types, deprecated code, unused variables.
+  - **JUnit Errors:** Test failures, assertion errors, setup/teardown issues, timeouts.
+- **📚 Stack Trace Explainer:** Learn how to read stack traces step by step.
+- **⚙️ Configurable:** Enable/disable specific categories in Settings > Tools > CodeLingo.
 - **Zero Configuration:** Just install and run.
 
 ## 🚀 How to use

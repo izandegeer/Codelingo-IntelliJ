@@ -416,7 +416,7 @@ object TranslationEngine {
         // ═══════════════════════════════════════════════════════════════
 
         add(ErrorPattern(
-            regex = Regex("cannot find symbol"),
+            regex = Regex("cannot find symbol|no se puede encontrar el símbolo", RegexOption.IGNORE_CASE),
             explanation = ErrorExplanation(
                 emoji = "🔍",
                 title = localized(
@@ -436,7 +436,7 @@ object TranslationEngine {
         ))
 
         add(ErrorPattern(
-            regex = Regex("variable.*might not have been initialized"),
+            regex = Regex("variable.*might not have been initialized|variable.*no se ha inicializado|podría no haberse inicializado", RegexOption.IGNORE_CASE),
             explanation = ErrorExplanation(
                 emoji = "⚠️",
                 title = localized(
@@ -456,7 +456,7 @@ object TranslationEngine {
         ))
 
         add(ErrorPattern(
-            regex = Regex("incompatible types"),
+            regex = Regex("incompatible types|tipos incompatibles", RegexOption.IGNORE_CASE),
             explanation = ErrorExplanation(
                 emoji = "❌",
                 title = localized(
@@ -476,7 +476,7 @@ object TranslationEngine {
         ))
 
         add(ErrorPattern(
-            regex = Regex("missing return statement"),
+            regex = Regex("missing return statement|falta.*sentencia return|falta.*return", RegexOption.IGNORE_CASE),
             explanation = ErrorExplanation(
                 emoji = "↩️",
                 title = localized(
@@ -496,7 +496,7 @@ object TranslationEngine {
         ))
 
         add(ErrorPattern(
-            regex = Regex("unreachable statement"),
+            regex = Regex("unreachable statement|sentencia inaccesible|código inalcanzable", RegexOption.IGNORE_CASE),
             explanation = ErrorExplanation(
                 emoji = "🚫",
                 title = localized(
@@ -516,7 +516,7 @@ object TranslationEngine {
         ))
 
         add(ErrorPattern(
-            regex = Regex("non-static method.*static context"),
+            regex = Regex("non-static method.*static context|método no.?estático.*contexto estático", RegexOption.IGNORE_CASE),
             explanation = ErrorExplanation(
                 emoji = "🗿",
                 title = localized(
@@ -536,7 +536,7 @@ object TranslationEngine {
         ))
 
         add(ErrorPattern(
-            regex = Regex("non-static variable.*static context"),
+            regex = Regex("non-static variable.*static context|variable no.?estática.*contexto estático", RegexOption.IGNORE_CASE),
             explanation = ErrorExplanation(
                 emoji = "🗿",
                 title = localized(
@@ -556,7 +556,7 @@ object TranslationEngine {
         ))
 
         add(ErrorPattern(
-            regex = Regex("is abstract.*cannot be instantiated"),
+            regex = Regex("is abstract.*cannot be instantiated|es abstract.*no se puede instanciar|no se puede crear una instancia", RegexOption.IGNORE_CASE),
             explanation = ErrorExplanation(
                 emoji = "👻",
                 title = localized(
@@ -576,7 +576,7 @@ object TranslationEngine {
         ))
 
         add(ErrorPattern(
-            regex = Regex("not a statement"),
+            regex = Regex("not a statement|no es una sentencia", RegexOption.IGNORE_CASE),
             explanation = ErrorExplanation(
                 emoji = "⚠️",
                 title = localized(
@@ -596,7 +596,7 @@ object TranslationEngine {
         ))
 
         add(ErrorPattern(
-            regex = Regex("';' expected"),
+            regex = Regex("';' expected|se esperaba ';'|falta ';'", RegexOption.IGNORE_CASE),
             explanation = ErrorExplanation(
                 emoji = "📝",
                 title = localized(
@@ -616,7 +616,7 @@ object TranslationEngine {
         ))
 
         add(ErrorPattern(
-            regex = Regex("\\).*expected"),
+            regex = Regex("\\).*expected|se esperaba.*\\)", RegexOption.IGNORE_CASE),
             explanation = ErrorExplanation(
                 emoji = "📝",
                 title = localized(
@@ -636,7 +636,7 @@ object TranslationEngine {
         ))
 
         add(ErrorPattern(
-            regex = Regex("\\}.*expected"),
+            regex = Regex("\\}.*expected|se esperaba.*\\}", RegexOption.IGNORE_CASE),
             explanation = ErrorExplanation(
                 emoji = "📝",
                 title = localized(
@@ -656,7 +656,7 @@ object TranslationEngine {
         ))
 
         add(ErrorPattern(
-            regex = Regex("class.*is public.*should be declared in a file named"),
+            regex = Regex("class.*is public.*should be declared in a file named|clase.*es.*public.*debe declararse en un archivo", RegexOption.IGNORE_CASE),
             explanation = ErrorExplanation(
                 emoji = "📄",
                 title = localized(
@@ -676,7 +676,7 @@ object TranslationEngine {
         ))
 
         add(ErrorPattern(
-            regex = Regex("reached end of file while parsing"),
+            regex = Regex("reached end of file while parsing|se alcanzó el final del archivo|fin de archivo inesperado", RegexOption.IGNORE_CASE),
             explanation = ErrorExplanation(
                 emoji = "📄",
                 title = localized(
@@ -696,7 +696,7 @@ object TranslationEngine {
         ))
 
         add(ErrorPattern(
-            regex = Regex("illegal start of expression"),
+            regex = Regex("illegal start of expression|inicio ilegal de expresión|comienzo ilegal", RegexOption.IGNORE_CASE),
             explanation = ErrorExplanation(
                 emoji = "🚫",
                 title = localized(
@@ -716,7 +716,7 @@ object TranslationEngine {
         ))
 
         add(ErrorPattern(
-            regex = Regex("method.*in class.*cannot be applied"),
+            regex = Regex("method.*in class.*cannot be applied|método.*en.*clase.*no se puede aplicar", RegexOption.IGNORE_CASE),
             explanation = ErrorExplanation(
                 emoji = "📞",
                 title = localized(
@@ -736,7 +736,7 @@ object TranslationEngine {
         ))
 
         add(ErrorPattern(
-            regex = Regex("constructor.*in class.*cannot be applied"),
+            regex = Regex("constructor.*in class.*cannot be applied|constructor.*en.*clase.*no se puede aplicar", RegexOption.IGNORE_CASE),
             explanation = ErrorExplanation(
                 emoji = "🏗️",
                 title = localized(
@@ -756,7 +756,7 @@ object TranslationEngine {
         ))
 
         add(ErrorPattern(
-            regex = Regex("cannot assign a value to final variable"),
+            regex = Regex("cannot assign a value to final variable|no se puede asignar.*variable final", RegexOption.IGNORE_CASE),
             explanation = ErrorExplanation(
                 emoji = "🔒",
                 title = localized(
@@ -776,7 +776,7 @@ object TranslationEngine {
         ))
 
         add(ErrorPattern(
-            regex = Regex("variable.*is already defined"),
+            regex = Regex("variable.*is already defined|variable.*ya está definida|ya se ha definido", RegexOption.IGNORE_CASE),
             explanation = ErrorExplanation(
                 emoji = "👯",
                 title = localized(
@@ -796,7 +796,7 @@ object TranslationEngine {
         ))
 
         add(ErrorPattern(
-            regex = Regex("package.*does not exist"),
+            regex = Regex("package.*does not exist|paquete.*no existe|el paquete.*no existe", RegexOption.IGNORE_CASE),
             explanation = ErrorExplanation(
                 emoji = "📦",
                 title = localized(
